@@ -2,9 +2,9 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  // mode: process.env.NODE_ENV,
+  mode: process.env.NODE_ENV,
   entry: './client/index.js',
-  mode: "development",
+  // mode: "development",
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'build'),
@@ -68,7 +68,7 @@ module.exports = {
       publicPath: '/build',
       directory: path.join(__dirname, 'build'),
     },
-    proxy: [{ '/': 'http://localhost:3001' }], //added this to do postman requests
+    proxy: [{ '/':  'http://localhost:3000' }], //added this to do postman requests
     port: 8080,
   },
   
