@@ -3,7 +3,7 @@ const app = express();
 const apiRouter = require('./routers/api')
 const cors = require('cors');
 const path = require('path');
-const PORT = 3001;
+const PORT = 3000;
 
 app.use(express.static(path.resolve(__dirname, '../build')));
 app.use(express.json());
