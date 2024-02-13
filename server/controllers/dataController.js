@@ -2,6 +2,7 @@ const db = require('../models/dataModels.js')
 
 const dataController = {}
 
+//.getUser currently is used to check connection w/ database - Amir[2.13@12:00]
 dataController.getUser = async (req, res, next) => {
 	const { username, email } = req.body
 

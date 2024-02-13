@@ -1,6 +1,8 @@
 const { Pool } = require('pg')
+//this loads the .env file //note: .env is never uploaded to github
 const dotenv = require('dotenv')
 
+//.env file
 dotenv.config()
 
 const pool = new Pool({

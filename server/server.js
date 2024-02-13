@@ -9,6 +9,7 @@ const PORT = 3000
 app.use(express.static(path.resolve(__dirname, '../build')))
 app.use(express.json())
 
+//apiRouter routes to api file
 app.use('/', apiRouter)
 
 app.get('/', (req, res) => {
