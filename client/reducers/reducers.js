@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
 
-const initialState = {};
+const initialState = {
+  
+};
 
 function rootReducer(state = initialState, action) {
   //include reducers here for handling actions/update state
