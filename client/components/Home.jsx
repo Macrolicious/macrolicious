@@ -38,7 +38,7 @@ function Home() {
       <Typography variant='h6' component='div'>
         Planned Macros - Carbs: {plannedMacros.carbs}g, Protein: {plannedMacros.protein}g, Fat: {plannedMacros.fat}g
       </Typography>
-      <MacrosLeft calories={totalCalories}/>
+      <MacrosLeft calories={totalCalories} fat={plannedMacros.fat} protein={plannedMacros.protein} carbs={plannedMacros.carbs}/>
       <MealLog  meals={meals}/>
       {/* {!isRegistered && <UserProfile />}
       {isRegistered && <button onClick={handleRegistration}></button>} */}
