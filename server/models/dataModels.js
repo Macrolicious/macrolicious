@@ -1,20 +1,22 @@
-const { Pool } = require('pg');
-const dotenv = require('dotenv');
+const { Pool } = require('pg')
+//this loads the .env file //note: .env is never uploaded to github
+const dotenv = require('dotenv')
 
-dotenv.config();
+//.env file
+dotenv.config()
 
 const pool = new Pool({
-  connectionString: process.env.PG_URI,
-});
+	connectionString: process.env.PG_URI,
+})
 
 const query = (text, params, callback) => {
-  console.log('executed query');
-  return pool.query(text, params).catch((e) => {
-    console.error('Error executing query', e.stack);
-    throw e;
-  });
+	console.log('executed query')
+	return pool.query(text, params).catch((e) => {
+		console.error('Error executing query', e.stack)
+		throw e
+	})
 }
 
-const end = () => pool.end();
+const end = () => pool.end()
 
-export default { query, end };
+module.exports = { query, end }

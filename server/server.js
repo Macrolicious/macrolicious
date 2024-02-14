@@ -1,15 +1,19 @@
-const express = require('express');
-const app = express();
+const express = require('express')
+const dataController = require('./controllers/dataController.js')
+const app = express()
 const apiRouter = require('./routers/api')
+
 const cors = require('cors');
 const path = require('path');
 const PORT = 3000;
 
-app.use(express.static(path.resolve(__dirname, '../build')));
-app.use(express.json());
 
+app.use(express.static(path.resolve(__dirname, '../build')))
+app.use(express.json())
 
-app.use('/', apiRouter);
+//apiRouter routes to api file
+app.use('/', apiRouter)
+
 
 
 //  define a route to serve CSS file
@@ -32,3 +36,4 @@ app.use((err, req, res, next) => {
 
 
 app.listen(PORT, () => console.log(' ੈ‧₊˚ HEY LISTEN! ੈ‧₊˚ (on 3000)'));
+
