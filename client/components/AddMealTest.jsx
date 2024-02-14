@@ -28,11 +28,11 @@ const AddMeal = () => {
       ...prevMeal,
       [name]: value
     }))
-    console.log(meal)
   }
 
   const handleSubmit = () => {
     dispatch(addMealActionCreator(meal))
+    handleClose()
   }
 
   const style = {
@@ -70,7 +70,7 @@ const AddMeal = () => {
           <Box display="flex" alignItems="center" gap={2}>
             <TextField name="name" onChange={handleInput} label="Meal Name" fullWidth margin="normal" />
             {!custom && (
-              <Button onClick={handleSearch()} variant="contained">Go!</Button>
+              <Button onClick={handleClose} variant="contained">Go!</Button>
             )}
           </Box>
 
