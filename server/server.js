@@ -11,11 +11,12 @@ app.use(express.json());
 
 app.use('/', apiRouter);
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '/client/index.html'));
-});
 
-
+//  define a route to serve CSS file
+app.get('/Output.css', (req, res) => {
+  // res.setHeader('Content-Type', 'text/css'); //  MIME?
+  res.sendFile(path.join(__dirname, '../client/stylesheets/Output.css' ));
+})
 
 app.use((err, req, res, next) => {
     console.log('error in app.use: ', err)
@@ -30,4 +31,4 @@ app.use((err, req, res, next) => {
   });
 
 
-app.listen(PORT, () => console.log('HEY LISTEN! (on 3000)'));
+app.listen(PORT, () => console.log(' ੈ‧₊˚ HEY LISTEN! ੈ‧₊˚ (on 3000)'));

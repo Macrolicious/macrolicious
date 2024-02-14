@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently \"cross-env NODE_ENV=development webpack-dev-server --open --hot --color\" \"cross-env NODE_ENV=development nodemon ./server/server.js\"",
     "start": "NODE_ENV=production nodemon server/server.js",
-    "build": "webpack --mode development"
+    "build": "webpack --mode development",
+    "build-css": "tailwind build client/stylesheets/tailwind.css -o client/stylesheets/Output.css"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,10 @@
     "webpack-dev-server": "^5.0.0"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.15.10",
+    "@reduxjs/toolkit": "^2.2.0",
     "archiver": "^6.0.1",
     "autoprefixer": "^10.4.17",
     "cors": "^2.8.5",
@@ -50,6 +55,7 @@
     "postcss-loader": "^8.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^9.1.0",
     "react-router-dom": "^6.22.0",
     "redux": "^5.0.1"
   }
