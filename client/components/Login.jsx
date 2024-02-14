@@ -3,13 +3,15 @@ import { Button, TextField, Container, Typography } from '@mui/material';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginActionCreator } from '../actions/userActions'
+import { useNavigate } from 'react-router-dom'
 
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -34,6 +36,8 @@ const Login = () => {
       console.log(`USER ID IS ${data.userID} AND USERNAME IS ${data.username}`)
 
       dispatch(loginActionCreator(data.userID, data.username))
+
+      navigate('/home')
 
     } catch (err) {
       console.error(
