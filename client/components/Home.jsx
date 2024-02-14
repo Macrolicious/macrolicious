@@ -41,7 +41,7 @@ function Home() {
       {!isRegistered && (
         <div>
           <UserProfile onUserDataSubmit={handleUserDataSubmit}/>
-          <Button onClick={handleRegistration}>Verify personal information!</Button>
+          <Button onClick={handleRegistration}>Verify personal information</Button>
         </div>
       )}
     </div>
