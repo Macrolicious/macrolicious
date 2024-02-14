@@ -3,7 +3,7 @@ import { Button, TextField, Container, Typography } from '@mui/material';
 import { useState } from 'react';
 import UserProfile from './UserProfile';
 
-const Login = () => {
+const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(true);   //  ***** LEAVE MESSAGE HERE UNTIL USESTATE = FALSE ***** 
@@ -75,4 +75,4 @@ const Login = () => {
   );
 };
 
-export default Login
+export default Register

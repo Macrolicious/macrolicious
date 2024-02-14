@@ -10,6 +10,7 @@ const initialState = {
   age: 0,
   activityLevel: '',
 };
+
 //dropdown, keys (1, 2, 3, 4, 5);
 const activityLevels = {
   sedentary: 1.2,
