@@ -5,7 +5,7 @@ import { updateUserData } from '../actions/userActions';
 const UserProfile = props => {
   const dispatch = useDispatch();
   const [userData, setUserData] = useState({
-    userName: '',
+    username: '',
     weight: 0,
     height: 0,
     age: 0,
@@ -20,25 +20,25 @@ const UserProfile = props => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const { userName, weight, height, age, activityLevel } = e.target;
-    if( userName === '' || weight <= 0 || height <= 0 || age <= 0 || activityLevel === ''){
+    const { username, weight, height, age, activityLevel } = e.target;
+    if( username === '' || weight <= 0 || height <= 0 || age <= 0 || activityLevel === ''){
       console.log('enter valid user profile')//  info does NOT checkout (we need some error message here)
     } else { //  info checks out 
       dispatch(updateUserData(userData));
     }
   };
 
-  return ( //  we will probably remove the userName thing later and userName will saved across pages
-    <div>
-      {/* <div>
-        <p>userName</p>
+  return ( //  we will probably remove the username thing later and username will saved across pages
+    <div className="user-profile">
+      <div>
+        <p>username</p>
         <input
           type="text"
-          name="userName"
-          value={userData.userName}
+          name="username"
+          value={userData.username}
           onChange={handleInputChange}
         />
-      </div> */}
+      </div>
       <div>
         <p>Weight:</p>
         <input

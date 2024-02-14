@@ -9,6 +9,7 @@ const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('Username:', username, 'Password:', password);
+
   };
 
   return (
@@ -57,3 +58,15 @@ const Login = () => {
 };
 
 export default Login
+
+  //  2 variables for handling state [isLoggedIn, setIsLoggedIn] = useState(false)
+  //  IsRegistered, setIsRegistered 
+  // user clicks register button on login component. This routes user to a registration page.
+  // on the registration page we have inputs for 
+  // -username
+  // -password
+  // -weight, activity level
+  // -etc…
+  
+  // when user ‘submits’ this form we send a post request to our database vai express route to store the user’s information.
+  // if the response.ok property is truethy, useDispatch to set the isLoggedIn variable in the user slice of redux state via action.
