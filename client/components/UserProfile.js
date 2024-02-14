@@ -68,14 +68,20 @@ const UserProfile = props => {
     </div>
     <div>
       <p>Activity Level:</p>
-      <input
-        type="number"
+      <select
         name="activityLevel"
         value={userData.activityLevel}
         onChange={handleInputChange}
-      />
+      >
+        <option value="">Select Activity Level</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
     </div>
-    <button onClick={handleSubmit}>Submit</button>
+    <button className="submit-btn" onClick={handleSubmit}>Submit</button>
   </div>
   );
 
