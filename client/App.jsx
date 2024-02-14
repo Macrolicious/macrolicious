@@ -9,13 +9,13 @@ function App() {
       <div className='App'>
         <nav>
           <ul>
-            <li><Link to="/" className= 'text-blue-500'>Home</Link></li>
+            <li><Link to="/home" className= 'text-blue-500'>Home</Link></li>
             <li><Link to="/login" className= 'text-blue-500'>Login</Link></li>
           </ul>
         </nav>
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
         </Routes>
       </div>
     </Router>
