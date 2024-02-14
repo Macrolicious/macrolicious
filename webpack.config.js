@@ -69,12 +69,45 @@ module.exports = {
       publicPath: '/build',
       directory: path.join(__dirname, 'build'),
     },
-    proxy: [{ '/':  'http://localhost:3000' }], //added this to do postman requests
+    proxy: [
+      {
+        context: ["/api"],
+        target: "http://localhost:3000",
+        changeOrigin: true,
+      },
+    ],
     port: 8080,
   },
   
  
 };
 
+
+/*
+
+devServer: {
+    static: {
+      directory: path.join(__dirname, './build'),
+    },
+    hot: true,
+    port: 3000,
+    proxy: {
+      '/': 'http://localhost:' + process.env.PORT,
+    },
+  },
+
+
+*/
+
+
+/*
+  devServer: {
+    proxy: [
+      {
+        context: ['/api'],
+        target: 'http://localhost:3000',
+      },
+    ],
+*/
 
 
