@@ -19,22 +19,4 @@ dataController.getUser = async (req, res, next) => {
 	}
 }
 
-// return db.query('SELECT * FROM users WHERE username = $1', [username]).then(
-// 	(data) => (
-// 		(res.locals.userId = data),
-// 		console
-// 			.log(res.locals.userID)
-// 			.then(() => next())
-// 			.catch((err) =>
-// 				next({
-// 					log:
-// 						'Express error handler caught userController.getUser middleware' +
-// 						err,
-// 					status: 400,
-// 					message: 'ERROR',
-// 				})
-// 			)
-// 	)
-// )
-
 module.exports = dataController

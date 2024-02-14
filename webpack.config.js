@@ -76,13 +76,3 @@ module.exports = {
 };
 
 
-// devServer: {
-//   static: {
-//     directory: path.join(__dirname, './build'),
-//   },
-//   hot: true,
-//   port: 3000,
-//   proxy: {
-//     '/': 'http://localhost:' + process.env.PORT,
-//   },
-// },
