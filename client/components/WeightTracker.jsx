@@ -81,4 +81,4 @@ function WeightTracker() {
 	)
 }
 
-export default WeightTracker;
+export default WeightTracker
