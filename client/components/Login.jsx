@@ -1,16 +1,25 @@
 import React from 'react';
 import { Button, TextField, Container, Typography } from '@mui/material';
-import { useState } from 'react'
+import { useState } from 'react';
+import UserProfile from './UserProfile';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(true);   //  ***** LEAVE MESSAGE HERE UNTIL USESTATE = FALSE ***** 
+  const [isRegistered, setIsRegistered] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('Username:', username, 'Password:', password);
 
+    //simulate successful login
+    setIsLoggedIn(true);
   };
+  const handleRegistration = () => {
+    setIsRegistered(true);
+  };
+
 
   return (
     <Container component="main" maxWidth="xs">
@@ -53,7 +62,16 @@ const Login = () => {
           Sign In
         </Button>
       </form>
+      {/* if user is logged in but not registered show userprofile */}
+      { isLoggedIn && !isRegistered && <UserProfile /> }
+
+      {!isRegistered && (
+        <Button onClick={handleRegistration} fullWidth> 
+          Register
+        </Button>
+      )}
     </Container>
+    
   );
 };
 
