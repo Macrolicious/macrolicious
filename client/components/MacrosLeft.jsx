@@ -12,7 +12,7 @@ function Macros({
   caloriesLeft,
 }) {
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} sx={{ display: 'flex', flexDirection: 'column'}}>
       <Grid item xs={6}>
         <Card>
           <CardContent>
@@ -38,7 +38,10 @@ function Macros({
         <Card>
           <CardContent>
             <Typography variant='h5' component='div'>
-              Macros Left for Today
+              Goal for Today
+            </Typography>
+            <Typography variant='body2' color='text.secondary'>
+              Calories Left: {caloriesLeft}
             </Typography>
             <Typography variant='body2' color='text.secondary'>
               Carbs: {carbsLeft}g
@@ -48,9 +51,6 @@ function Macros({
             </Typography>
             <Typography variant='body2' color='text.secondary'>
               Fat: {fatLeft}g
-            </Typography>
-            <Typography variant='body2' color='text.secondary'>
-              Calories Left: {caloriesLeft}
             </Typography>
           </CardContent>
         </Card>
