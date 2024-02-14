@@ -20,9 +20,8 @@ app.use('/api', router)
 
 
 //  define a route to serve CSS file
-app.get('/Output.css', (req, res) => {
-  // res.setHeader('Content-Type', 'text/css'); //  MIME?
-  res.sendFile(path.join(__dirname, '../client/stylesheets/Output.css' ));
+app.get('/styles.css', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/stylesheets/styles.css' ));
 })
 
 app.use((err, req, res, next) => {

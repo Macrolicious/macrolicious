@@ -6,8 +6,8 @@ import UserProfile from './UserProfile';
 const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(true);   //  ***** LEAVE MESSAGE HERE UNTIL USESTATE = FALSE ***** 
-  const [isRegistered, setIsRegistered] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(true);   //  ***** LEAVE MESSAGE HERE UNTIL USESTATE = FALSE ***** 
+  // const [isRegistered, setIsRegistered] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -62,14 +62,14 @@ const Register = () => {
           Sign In
         </Button>
       </form>
-      {/* if user is logged in but not registered show userprofile */}
+      {/* if user is logged in but not registered show userprofile
       { isLoggedIn && !isRegistered && <UserProfile /> }
 
       {!isRegistered && (
         <Button onClick={handleRegistration} fullWidth> 
           Register
         </Button>
-      )}
+      )} */}
     </Container>
     
   );

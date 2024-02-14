@@ -15,4 +15,4 @@ const userController = require('../controllers/userController.js')
 
 router.post('/signin', userController.login, (req, res) => {res.status(200).json(res.locals)});
 
-module.exports = router
+module.exports = router;

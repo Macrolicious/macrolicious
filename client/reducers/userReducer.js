@@ -3,16 +3,17 @@ import * as types from '../constants/actionTypes';
 
 const initialState = {
   isLoggedIn: false,
-  userID: null,
+  // userID: null,
   username: '',
   weight: 0,
   height: 0,
   age: 0,
-  activityLevel: '',
+  activityLevel: 0,
 };
 
-//dropdown, keys (1, 2, 3, 4, 5);
+//dropdown, keys (0, 1, 2, 3, 4, 5);
 const activityLevels = {
+  none: 0,
   sedentary: 1.2,
   light: 1.375,
   moderate: 1.55,
@@ -28,7 +29,7 @@ const activityLevels = {
         return{
           ...state,
           isLoggedIn: true,
-          userID: action.payload.userID,
+          // userID: action.payload.userID,
           username: action.payload.username
         }
 
