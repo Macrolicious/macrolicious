@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addMealActionCreator } from '../actions/userActions'
-import { Modal, Box, Typography, TextField, Button, Switch, FormControlLabel } from '@mui/material';
+import { Modal, Box, Typography, TextField, Button, Switch, FormControlLabel, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 
 const AddMeal = () => {
   const dispatch = useDispatch()
@@ -9,6 +9,7 @@ const AddMeal = () => {
   const [custom, setCustom] = useState(true)
   const [meal, setMeal] = useState({
     name: '',
+    mealType: '',
     serving: '',
     calories: '',
     protein: '',
@@ -73,6 +74,20 @@ const AddMeal = () => {
               <Button onClick={handleClose} variant="contained">Go!</Button>
             )}
           </Box>
+          
+          <FormControl fullWidth margin="normal">
+            <InputLabel>Meal Type</InputLabel>
+            <Select
+              value={meal.mealType}
+              onChange={handleInput}
+              name="mealType"
+              label="Meal Type"
+            >
+              <MenuItem value="Breakfast">Breakfast</MenuItem>
+              <MenuItem value="Lunch">Lunch</MenuItem>
+              <MenuItem value="Dinner">Dinner</MenuItem>
+            </Select>
+          </FormControl>
 
           {custom ? (
             <>
