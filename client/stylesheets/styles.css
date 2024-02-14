@@ -1,3 +1,27 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+
+.user-profile {
+  /* Add your styles here */
+  background-color: #868694;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+}
+
+.submit-btn {
+  background-color: #4a90e2; /* Blue background color */
+  color: #ffffff; /* White text color */
+  font-weight: bold; /* Bold text */
+  padding: 10px 20px; /* Padding */
+  border-radius: 5px; /* Rounded corners */
+  border: none; /* No border */
+  cursor: pointer; /* Cursor style */
+}
+
+.submit-btn:hover {
+  background-color: #357ae8; /* Darker blue background color on hover */
+}
+
+.submit-btn:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5); /* Add custom focus shadow */
+}
