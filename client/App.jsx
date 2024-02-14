@@ -11,6 +11,7 @@ function App() {
           <ul>
             <li><Link to="/home" className= 'text-blue-500'>Home</Link></li>
             <li><Link to="/login" className= 'text-blue-500'>Login</Link></li>
+            {/* <li><Link to="/register" className= 'text-blue-500'>Register</Link></li> */}
           </ul>
         </nav>
         <Routes>

@@ -19,4 +19,4 @@ const query = (text, params, callback) => {
 
 const end = () => pool.end()
 
-module.exports = { query, end }
+module.exports = { query, end, pool }

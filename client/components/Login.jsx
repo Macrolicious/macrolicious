@@ -1,23 +1,46 @@
 import React from 'react';
 import { Button, TextField, Container, Typography } from '@mui/material';
 import { useState } from 'react';
-import UserProfile from './UserProfile';
+import { useDispatch } from 'react-redux';
+import { loginActionCreator } from '../actions/userActions'
+
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(true);   //  ***** LEAVE MESSAGE HERE UNTIL USESTATE = FALSE ***** 
-  const [isRegistered, setIsRegistered] = useState(false);
 
-  const handleSubmit = (event) => {
+  const dispatch = useDispatch()
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log('Username:', username, 'Password:', password);
+    
+    try {
 
-    //simulate successful login
-    setIsLoggedIn(true);
-  };
-  const handleRegistration = () => {
-    setIsRegistered(true);
+      console.log(username, password)
+      const reqOpts = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password }),
+      }
+
+      const response = await fetch('/api/signin', reqOpts)
+
+      console.log('$!$!$!$$!$!!$!$!$!$$!$!!$!$$!!$!$!$!$', response)
+
+      const data = await response.json()
+
+      if (!response.ok) throw new Error(data.error || 'error from sever')
+
+      console.log(`USER ID IS ${data.userID} AND USERNAME IS ${data.username}`)
+
+      dispatch(loginActionCreator(data.userID, data.username))
+
+    } catch (err) {
+      console.error(
+        'error caught in handleAuth in LoginContainer',
+        err.message
+      );
+    }
   };
 
 
@@ -63,15 +86,7 @@ const Login = () => {
         </Button>
       </form>
       {/* if user is logged in but not registered show userprofile */}
-      { isLoggedIn && !isRegistered && <UserProfile /> }
-
-      {!isRegistered && (
-        <Button onClick={handleRegistration} fullWidth> 
-          Register
-        </Button>
-      )}
     </Container>
-    
   );
 };
 
