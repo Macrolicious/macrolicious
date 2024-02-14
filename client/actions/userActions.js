@@ -9,3 +9,8 @@ export const loginActionCreator = (userID, username) => ({
   type: types.LOGIN,
   payload: {userID, username}
 })
+
+export const addMealActionCreator = (meal) => ({
+  type: types.ADD_MEAL,
+  payload: meal,
+})
